@@ -38,7 +38,7 @@ function Header({brand}) {
           <li><Link to="/">Home</Link></li>
           <li><Link to="https://youtu.be/CGAblZfXb5U">Video</Link></li>
           <li><Link to="https://github.com/nonfungibledocs">Github</Link></li>
-          <li><Link to="/app.html">Try</Link></li>
+          <li><Link to="/app">Try</Link></li>
         </ul>
       </details>
     </li>

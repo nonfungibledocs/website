@@ -135,7 +135,7 @@ const jsonData = [
 
 
 function Page() {
-  const url = "/app.html"
+  const url = "/app"
   const TLD = "https://nonfungibledocs.com"
   return (<section>
     <div className="grid">
@@ -146,14 +146,13 @@ function Page() {
       </hgroup>
         
         <blockquote className='secondary'>
-          <i>The unauthorized disclosures have clearly caused irreparable damage to our nation’s ability to protect itself."</i>
+          <i>"The unauthorized disclosures have clearly caused irreparable damage to our nation’s ability to protect itself."</i>
           <footer>
             <cite>— former country head of intelligence</cite>
           </footer>
         </blockquote>
         
-        
-        <p>Create subtle variations of your doc or content. Paste any page of the leaked version to know who is responsible</p>
+        Create subtle variations of your doc or content. Paste any page of the leaked version to know who is responsible
         <p>
           <div className="grid">
             <div>Create upto <mark>10k</mark>variations</div>
