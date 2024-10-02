@@ -33,16 +33,14 @@ const Carousel = ({data}) => {
   
     return (
       <div className="carousel">
-        <label>
             <ins>{slide.variations} </ins> variations possible by changing
             {/* range = {parseInt(slide.variations,10)} / {data[data.length-1].variations} = {I(slide.variations)*100/I(data[data.length-1].variations)} */}
             {/* <input type="range" value={100*I(slide.variations)/I(data[data.length-1].variations)}/> */}
-        </label>
         <table>
             <thead>
                 <tr>
                     <th scope="col">&nbsp;</th>
-                    <th scope="col"><strong>Prompt Strategy</strong></th>
+                    <th scope="col"><small>Prompt Strategy</small></th>
                 </tr>
             </thead>
             <tbody>

@@ -183,11 +183,11 @@ function Page() {
     <div>
         <div className='container grid'>
           <div>
-            <p>Built by <Link to="https://x.com/@bosky">@0xBosky</Link> using Gemini, React</p>
-            
-            <p>Scroll below for a talk</p>
+            <Slides data={jsonData}></Slides>
           </div>
-          <div>
+
+
+           <div>
             <details>
               <summary>What do I do with the variations?</summary>
               <p>Once generated, please store the versions internally</p>
@@ -204,8 +204,11 @@ function Page() {
           </div>
           
           <div>
-          <Slides data={jsonData}></Slides>
+            <p>Built by <Link to="https://x.com/@bosky">@0xBosky</Link> using Gemini, React</p>
+            
+            <p>Scroll below for a talk</p>
           </div>
+       
 
         </div>
     </div>
