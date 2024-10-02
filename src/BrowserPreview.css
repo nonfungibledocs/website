@@ -1,0 +1,58 @@
+.browser-window {
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.browser-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #27c93f;
+}
+
+.address-bar {
+  flex-grow: 1;
+  background-color: #fff;
+  padding: 5px 10px;
+  margin: 0 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #666;
+  border: 1px solid #ccc;
+}
+
+.browser-content {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+

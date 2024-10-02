@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Generative AI - Chat</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="chat-history"></div>
+    </div>
+    <div class="form-container">
+      <div id="form">
+        <textarea style="width:100%;padding:10px;height:40px;" id="emails" name="emails" >a@acme.com, b@acme.com, c@acme.com
+        </textarea>
+        <br />
+        <textarea style="width:100%;padding:10px;height:200px;" id="prompt" name="prompt" >At 0500 hours, enemy artillery began shelling our western perimeter. Defensive units responded promptly, with the 2nd Battalion successfully neutralizing two enemy tanks and holding ground. No casualties reported among our men. The enemy has since retreated into the nearby forest, likely regrouping for another assault. Reconnaissance patrols are already in place, and intelligence suggests increased enemy activity in the north.
+
+Supplies are running low, but resupply convoys are expected to arrive within 48 hours. Until then, rations will be limited. Medical supplies are being prioritized for those in critical condition, with triage stations established near the command center.
+
+Morale remains high, despite harsh conditions. The bravery displayed by every soldier here is commendable. Letters from home will be distributed at 1700 hours; please ensure you collect them from the mail tent.
+
+We anticipate further engagements in the coming days. All personnel are to remain on high alert. Reinforcements from the 3rd Infantry Division are scheduled to arrive by week's end to bolster our defenses.
+
+Hold strong. Our victory is within sight.
+</textarea>
+        <br />
+        <input style="width:100%;padding:10px;" placeholder="Your Gemini API Key" type="password" 
+          id="APIKEY" name="APIKEY" 
+        />
+        <br />
+        <button style="width:100%;padding:10px;" id="submit" type="submit">Create non-fungible doc</button>
+      </div>
+      <template id="thumb-template">
+        <img class="thumb" />
+      </template>
+    </div>
+
+    <script type="module">
+      import {
+        getGenerativeModel,
+        scrollToDocumentBottom,
+        updateUI,
+      } from "./app/utils/shared.js";
+
+      const submit = document.querySelector("#submit");
+      const historyElement = document.querySelector("#chat-history");
+      let chat;
+
+      document
+        .querySelector("#submit")
+        .addEventListener("click", async (event) => {
+          event.preventDefault();
+
+          if (!chat) {
+            const model = await getGenerativeModel({ model: "gemini-1.5-flash" });
+            chat = model.startChat({
+              generationConfig: {
+                maxOutputTokens: 10000,
+              },
+            });
+          }
+          
+          const userMessage = document.querySelector("#prompt").value;
+          const emails = document.querySelector("#emails").value;
+          const versions = emails.split(',');
+          const systemPrompt = 
+          `Convert the following content into ${versions.length} other variations with as little change as possible.
+          
+          ${userMessage}`
+          // Create UI for the new user / assistant messages pair
+          
+          // historyElement.innerHTML += `<div class="history-item model-role">
+          //   <div class="name">Model</div>
+          //   <blockquote>${systemPrompt}</blockquote>
+          // </div>`;
+          
+          historyElement.innerHTML += `<div class="history-item model-role">
+            <div class="name">Model</div>
+            <blockquote></blockquote>
+          </div>`;
+          
+          historyElement.innerHTML += `<div class="history-item user-role">
+            <div class="name">User</div>
+            <blockquote>${userMessage}</blockquote>
+          </div>`;
+
+          // return document.body.appendChild(historyElement);
+
+          scrollToDocumentBottom();
+          const resultEls = document.querySelectorAll(
+            ".model-role > blockquote",
+          );
+          await updateUI(
+            resultEls[resultEls.length - 1],
+            () => chat.sendMessageStream(systemPrompt),
+            true,
+          );
+        });
+    </script>
+  </body>
+</html>
