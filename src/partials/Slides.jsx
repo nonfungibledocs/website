@@ -32,7 +32,7 @@ const Carousel = ({data}) => {
     };
   
     return (
-      <div className="carousel">
+      <small><div className="carousel">
             <ins>{slide.variations} </ins> variations possible by changing
             {/* range = {parseInt(slide.variations,10)} / {data[data.length-1].variations} = {I(slide.variations)*100/I(data[data.length-1].variations)} */}
             {/* <input type="range" value={100*I(slide.variations)/I(data[data.length-1].variations)}/> */}
@@ -54,57 +54,9 @@ const Carousel = ({data}) => {
             <div>&nbsp;</div>
             <div><a href="#" className="secondary" onClick={nextSlide}>&gt;</a></div>
         </div> */}
-      </div>
+      </div></small>
     );
-  };
+};
   
-// const xCarousel = ({data}) => {
-//     const [slide, setSlide] = useState(data[0]);
-//     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-
-//     // Automatically go to the next slide every 3 seconds
-//     useEffect(() => {
-//         const slideInterval = setInterval(() => {
-//         setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % data.length);
-//         }, 3000);
-
-//         // Clear interval when component unmounts
-//         return () => clearInterval(slideInterval);
-//     }, []);
-
-//     useEffect(() => {
-//         setSlide(data[currentSlideIndex]);
-//     }, [currentSlideIndex]);
-
-
-//     // Function to manually go to the next slide
-//     const nextSlide = () => {
-//         setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % data.length);
-//     };
-
-//     // Function to manually go to the previous slide
-//     const prevSlide = () => {
-//         setCurrentSlideIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
-//     };
-
-//     return (
-//         <div className="carousel">
-//             <label>
-//                 Variations
-//                 <input type="range" value={slide.variations}/>
-//             </label>
-//         <div className="carousel-slide">
-//             <h2>{slide.perc}</h2>
-//             <p><strong>Words:</strong> {slide.words}</p>
-//             <p><strong>Strategy:</strong> {slide.strategy}</p>
-//             <p><strong>Variations:</strong> {slide.variations}</p>
-//         </div>
-//         <div className="carousel-buttons">
-//             <button onClick={prevSlide}>Previous</button>
-//             <button onClick={nextSlide}>Next</button>
-//         </div>
-//         </div>
-//     );
-// };
 
 export default Carousel;

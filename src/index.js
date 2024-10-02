@@ -7,6 +7,7 @@ import Home from "./Home";
 import App from "./App";
 import pico from './pico.min.css'
 import styles from './styles.module.css'
+import './index.css'
 import {UserContext, UserProvider} from "./context.js";
 
 const NotFoundPage = () => {
@@ -18,7 +19,7 @@ const Layout = ({onLogout, brand}) => {
   return (<>
     <article className={styles.softwareasaservicedashboard} data-theme={theme}>
       <Header brand={brand} className={pico.container} onLogout={onLogout}></Header>
-      <main className={"container nfd-gradient-bg " + styles.softwareasaservicedashboard.outlet}><br />
+      <main className={"container " + styles.softwareasaservicedashboard.outlet}><br />
         <Outlet theme={theme} />
       </main>
       <Footer></Footer>

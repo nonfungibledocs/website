@@ -9,10 +9,13 @@ function Header({brand}) {
   const toggleTheme = () => {
     setTheme(theme == "light" ? "dark":"light");
   };
-  return (<nav className="container-fluid" data-theme={theme}>
+  return (<nav className="nfd-gradient-bg container-fluid" data-theme={theme}>
       <ul>
     <li>
-      <Link to="/" className={pico.contrast}><strong>nonfungibledocs.com</strong></Link>
+      <Link to="/" className={pico.contrast}>
+        <img src="/images/icons/favicon-32x32.png"/> &nbsp;&nbsp;
+        <strong>nonfungibledocs.com</strong>  - improve document security. <span class="hidden md:block">detect source of the leak by creating multiple versions in the first place</span> 
+        </Link>
     </li>
   </ul>
   <ul>

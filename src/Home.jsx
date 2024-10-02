@@ -146,26 +146,31 @@ function Page() {
       </hgroup>
         
         <blockquote className='secondary'>
-          <i>"The unauthorized disclosures have clearly caused irreparable damage to our nation’s ability to protect itself."</i>
+          <i>Unauthorized disclosures have clearly caused irreparable damage to our nation’s ability to protect itself</i>
           <footer>
             <cite>— former country head of intelligence</cite>
           </footer>
         </blockquote>
         
-        Create subtle variations of your doc or content. Paste any page of the leaked version to know who is responsible
-        <p>
+        <p><small>Create subtle variations of your doc or content. Paste any page of the leaked version to know who is responsible</small></p>
+
+        <div>
           <div className="grid">
-            <div>Create upto <mark>10k</mark>variations</div>
-            <div><mark>Detect </mark>the leak source</div>
+            <div>Create upto </div>
+            <div><mark>10k</mark>recepients</div>
           </div>
-        </p>
-        <hr />
-        <p>
+          <hr />
           <div className="grid">
-            <div><mark>1</mark> page to detect</div>
-            <div>Powered by <mark>AI, NLP & LLMs</mark></div>
+            <div>Pages supported </div>
+            <div><mark>2 - 1000+</mark>pages</div>
           </div>
-        </p>
+          <hr />
+          <div className="grid">
+            <div># of Pages to detect leak</div>
+            <div><mark>1</mark></div>
+          </div>
+        </div>
+        
       </div>
       {/* <div>
         <header style={{marginTop:"10vh"}}>&nbsp;</header>
@@ -205,7 +210,7 @@ function Page() {
           <div>
             <p>Built by <Link to="https://x.com/@bosky">@0xBosky</Link> using Gemini, React</p>
             
-            <p>Scroll below for a talk</p>
+            <p>Scroll below for a talk or <Link to="https://youtu.be/CGAblZfXb5U">watch</Link></p>
           </div>
        
 
