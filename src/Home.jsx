@@ -156,13 +156,13 @@ function Page() {
 
         <div>
           <div className="grid">
-            <div>Create upto </div>
-            <div><mark>10k</mark> recepients</div>
+            <div>Create variations for upto </div>
+            <div><mark>2 to 10k+</mark> recepients</div>
           </div>
           <hr />
           <div className="grid">
             <div>Pages supported </div>
-            <div><mark>2 - 1000+</mark> pages</div>
+            <div><mark>2 to 1000+</mark> pages</div>
           </div>
           <hr />
           <div className="grid">

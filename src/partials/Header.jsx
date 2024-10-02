@@ -14,7 +14,7 @@ function Header({brand}) {
     <li>
       <Link to="/" className={pico.contrast}>
         <img src="/images/icons/favicon-32x32.png"/> &nbsp;&nbsp;
-        <strong>nonfungibledocs.com</strong>  - improve document security. <span class="hidden md:block">detect source of the leak by creating multiple versions in the first place</span> 
+        <strong>nonfungibledocs.com</strong>  - improve document security. <span class="hidden md:block">detect source of the leak by creating multiple versions</span> 
         </Link>
     </li>
   </ul>
